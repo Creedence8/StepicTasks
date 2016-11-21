@@ -1,2 +1,2 @@
 # StepicTasks
-readme file to StepicTasks project.
+readme file of StepicTasks project.

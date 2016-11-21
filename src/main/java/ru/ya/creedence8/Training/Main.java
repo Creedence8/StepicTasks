@@ -20,7 +20,6 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-
         ObjectOutputStream oos = new ObjectOutputStream(baos);
         oos.writeInt(3);
         Animal[] animals = new Animal[] {new Animal("Barsik"),
@@ -29,7 +28,6 @@ public class Main {
         for (Animal foo : animals) {
             oos.writeObject(foo);
         }
-
 
         Animal[] foo = (deserializeAnimalArray(baos.toByteArray()));
         for (int i=0; i<foo.length; i++) {
