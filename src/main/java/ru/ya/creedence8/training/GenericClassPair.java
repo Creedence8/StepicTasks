@@ -1,4 +1,4 @@
-package ru.ya.creedence8.Training;
+package ru.ya.creedence8.training;
 
 import java.util.Objects;
 
@@ -8,11 +8,11 @@ import java.util.Objects;
 public class GenericClassPair {
 
     public static void main(String[] args) {
-        Pair<Integer, String> pair = Pair.of(1, "hello");
+        Pair<Integer, Integer> pair = Pair.of(null, 4);
         Integer i = pair.getFirst(); // 1
-        String s = pair.getSecond(); // "hello"
+        int s = pair.getSecond(); // "hello"
 
-        Pair<Integer, String> pair2 = Pair.of(1, "hello");
+        Pair<Integer, Integer> pair2 = Pair.of(null, 4);
         boolean mustBeTrue = pair.equals(pair2); // true!
         boolean mustAlsoBeTrue = pair.hashCode() == pair2.hashCode(); // true!
 
@@ -20,7 +20,7 @@ public class GenericClassPair {
     }
 }
 
-class Pair <T, W> {
+class Pair <T, W > {
     private T valueT;
     private W valueW;
 
@@ -33,7 +33,6 @@ class Pair <T, W> {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) { return false;}
         if (obj == this) {return true;}
         if (!(obj instanceof Pair)) {return false;}
         Pair<?,?> foo = (Pair<?,?>) obj;

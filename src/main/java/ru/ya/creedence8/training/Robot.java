@@ -1,4 +1,4 @@
-package ru.ya.creedence8.Training;
+package ru.ya.creedence8.training;
 
 /**
  * Created by Cole S' Offe on 10.11.2016.

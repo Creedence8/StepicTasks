@@ -1,14 +1,8 @@
-package ru.ya.creedence8.Training;
-
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
-import com.sun.xml.internal.ws.policy.jaxws.SafePolicyReader;
-import ru.ya.creedence8.Training.MailService.Mail;
-import sun.plugin.javascript.navig.Array;
+package ru.ya.creedence8.training;
 
 import java.io.*;
 import java.nio.charset.*;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 import java.util.logging.*;
 
 /**
@@ -18,21 +12,35 @@ public class Main {
 
     public static final Logger LOGGER = Logger.getLogger(Main.class.getName());
 
-    public static void main(String[] args) throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeInt(3);
-        Animal[] animals = new Animal[] {new Animal("Barsik"),
-                new Animal("Jack"),
-                new Animal("Michael"),};
-        for (Animal foo : animals) {
-            oos.writeObject(foo);
-        }
+    public static void main(String[] args)  {
+        changeInputWithCollections();
+    }
 
-        Animal[] foo = (deserializeAnimalArray(baos.toByteArray()));
-        for (int i=0; i<foo.length; i++) {
-            System.out.println(foo[i].equals(animals[i]));
+    public static void changeInputWithCollections() {
+        Deque<Integer> deque = new ArrayDeque<>();
+        Scanner scan = new Scanner(System.in);
+        int i = 0;
+        String foo;
+        while (scan.hasNext()) {
+            foo = scan.next();
+            if (foo.equals("end")) {
+                break;
+            }
+            if (!(i%2==0)) {
+                deque.addFirst(Integer.valueOf(foo));
+            }
+            i++;
         }
+        deque.forEach(bar -> System.out.print(bar+" "));
+    }
+
+    public static <T> Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
+        Set<T> set = new HashSet<T>(set1);
+        set.retainAll(set2);
+        Set<T> foo = new HashSet<T>(set1);
+        foo.addAll(set2);
+        foo.removeAll(set);
+        return foo;
     }
 
     public static Animal[] deserializeAnimalArray(byte[] data) {
@@ -166,4 +174,3 @@ public class Main {
 
     }
 }
-

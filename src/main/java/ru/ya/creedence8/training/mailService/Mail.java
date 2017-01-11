@@ -1,6 +1,5 @@
-package ru.ya.creedence8.Training.MailService;
+package ru.ya.creedence8.training.mailService;
 
-import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,9 +14,9 @@ public class Mail {
 
     public static void main(String[] args) {
 
-//        Logger.getLogger("ru.ya.creedence8.Training").setLevel(Level.WARNING);
-//        Logger.getLogger("ru.ya.creedence8.Training").setUseParentHandlers(false);
-//        Logger.getLogger("ru.ya.creedence8.Training").addHandler(new ConsoleHandler());
+//        Logger.getLogger("ru.ya.creedence8.training").setLevel(Level.WARNING);
+//        Logger.getLogger("ru.ya.creedence8.training").setUseParentHandlers(false);
+//        Logger.getLogger("ru.ya.creedence8.training").addHandler(new ConsoleHandler());
 
         Logger spyLog = Logger.getLogger(Mail.class.getName());
 

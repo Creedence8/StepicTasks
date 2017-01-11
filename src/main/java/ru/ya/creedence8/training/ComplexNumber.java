@@ -1,4 +1,4 @@
-package ru.ya.creedence8.Training;
+package ru.ya.creedence8.training;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
@@ -34,19 +34,19 @@ public final class ComplexNumber {
     }
 
     private static void setLoggerSettings(){
-        Logger.getLogger("ru.ya.creedence8.Training.ComplexNumber").setLevel(Level.ALL);
-        Logger.getLogger("ru.ya.creedence8.Training.ComplexNumber").setUseParentHandlers(true);
-        Logger.getLogger("ru.ya.creedence8.Training").setLevel(Level.ALL);
-        Logger.getLogger("ru.ya.creedence8.Training").setUseParentHandlers(false);
+        Logger.getLogger("ru.ya.creedence8.training.ComplexNumber").setLevel(Level.ALL);
+        Logger.getLogger("ru.ya.creedence8.training.ComplexNumber").setUseParentHandlers(true);
+        Logger.getLogger("ru.ya.creedence8.training").setLevel(Level.ALL);
+        Logger.getLogger("ru.ya.creedence8.training").setUseParentHandlers(false);
 
         ConsoleHandler ch2 = new ConsoleHandler();
         ch2.setLevel(Level.SEVERE);
         ch2.setFormatter(new XMLFormatter());
-        Logger.getLogger("ru.ya.creedence8.Training.ComplexNumber").addHandler(ch2);
+        Logger.getLogger("ru.ya.creedence8.training.ComplexNumber").addHandler(ch2);
 
         ConsoleHandler ch = new ConsoleHandler();
         ch.setLevel(Level.ALL);
-        Logger.getLogger("ru.ya.creedence8.Training").addHandler(ch);
+        Logger.getLogger("ru.ya.creedence8.training").addHandler(ch);
     }
 
     @Override

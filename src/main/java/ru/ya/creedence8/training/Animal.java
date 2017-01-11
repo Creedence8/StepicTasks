@@ -1,4 +1,4 @@
-package ru.ya.creedence8.Training;
+package ru.ya.creedence8.training;
 
 import java.io.Serializable;
 import java.util.Objects;
